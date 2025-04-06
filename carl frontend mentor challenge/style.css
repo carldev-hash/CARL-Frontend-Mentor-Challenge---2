@@ -1,0 +1,155 @@
+:root {
+  --primary-400: hsl(260, 100%, 95%);
+  --primary-500: hsl(264, 82%, 80%);
+  --primary-600: hsl(263, 55%, 52%);
+  --regular: 400;
+  --bold: 600;
+  --neutral-100:hsl(0, 0%, 100%);
+  --neutral-200:hsl(214, 17%, 92%);
+  --neutral-300:hsl(0, 0%, 81%);
+  --neutral-400:hsl(224, 10%, 45%);
+  --neutral-500:hsl(217, 19%, 35%);
+  --neutral-600:hsl(219, 29%, 14%);
+  --neutral-700:hsl(0, 0%, 7%);
+  --ff: "Barlow Semi Condensed", sans-serif;
+  --fs-400: 13px;
+}
+
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+html {
+  height: 100%;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  font-family: var(--ff);
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: var(--fs-400);
+  background: var(--neutral-100);
+  color: var(--neutral-100);
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+h2 {
+  font-weight: var(--bold);
+}
+h3 {
+  font-weight: var(--regular);
+}
+h2 {
+  margin-bottom: 1rem;
+}
+.item {
+  padding: 1.5rem;
+  border-radius: .6rem;
+}
+.item:nth-child(2) {
+  background: var(--neutral-500);
+}
+.item:nth-child(1) {
+  background: var(--primary-600);
+}
+.item:nth-child(4) {
+  background: var(--neutral-600);
+}
+.item:nth-child(3), .item:nth-child(5) {
+  color: var(--neutral-400);
+  background: var(--neutral-200);
+  box-shadow: 9px -200px 4px -200px rgba(103,109,126,0.75);
+  
+}
+.item:nth-child(1) .flex img {
+  border: 3px solid var(--primary-500);
+}
+.item:nth-child(4) .flex img {
+  border: 3px solid var(--primary-600);
+}
+.flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+.flex img {
+  border-radius: 50%;
+  height: 50px;
+  aspect-ratio: 1;
+}
+
+.gridd  {
+  padding: 2rem;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.same-color{
+  color: var(--neutral-400) ;
+}
+
+@media (min-width: 769px) {
+  .gridd {
+    grid-template-columns: repeat(4,1fr);
+  }
+  .item:last-child {
+    grid-column-start: 4 ;
+    grid-row: 1 / span 2;
+  }
+  .item:nth-child(4) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  .item:nth-child(1) {
+    background: var(--primary-600) url("./images/bg-pattern-quotation.svg") no-repeat top;
+  background-size: fit;
+  background-position-x: 80%;
+  grid-column: span 2;
+}
+.item:nth-child(3), .item:nth-child(5) {
+  box-shadow: 9px 15px 15px 8px rgba(103,109,126,0.75);
+  
+}
+}
+
