@@ -46,7 +46,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-size: var(--fs-400);
-  background: var(--neutral-100);
+  background: lightcoral;
   color: var(--neutral-100);
 }
 
